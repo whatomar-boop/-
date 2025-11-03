@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية - نبيل عبدالله حسان</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 10px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cv-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 95vh;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .profile-section {
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.3);
+            overflow: hidden;
+            background: #ecf0f1;
+            margin: 0 auto 20px;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .personal-info h1 {
+            font-size: 1.8em;
+            margin-bottom: 8px;
+            font-weight: 300;
+            line-height: 1.3;
+        }
+        
+        .personal-info .title {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 15px 0;
+            font-size: 0.85em;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sidebar {
+            background: #f8f9fa;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .content {
+            padding: 25px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            font-size: 1.2em;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 40px;
+            height: 2px;
+            background: #e74c3c;
+        }
+        
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            border-right: 3px solid #3498db;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .skill-item h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+        
+        .skill-item p {
+            color: #7f8c8d;
+            font-size: 0.8em;
+            line-height: 1.4;
+        }
+        
+        .experience-item, .education-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 3px solid #e74c3c;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .item-title {
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        
+        .item-description {
+            color: #7f8c8d;
+            line-height: 1.5;
+            font-size: 0.85em;
+        }
+        
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background: #3498db;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+        
+        .tag.driver {
+            background: #e74c3c;
+        }
+        
+        .tag.marketing {
+            background: #2ecc71;
+        }
+        
+        .tag.accounting {
+            background: #9b59b6;
+        }
+        
+        .compact-list {
+            font-size: 0.85em;
+            line-height: 1.6;
+            color: #7f8c8d;
+        }
+        
+        .compact-list li {
+            margin-bottom: 5px;
+        }
+
+        /* إخفاء شريط التمرير مع الحفاظ على functionality */
+        .sidebar::-webkit-scrollbar,
+        .content::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track,
+        .content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb,
+        .content::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .header {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- الشريط الجانبي -->
+        <div class="header">
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="https://www.raed.net/img?id=1459420" alt="صورة نبيل عبدالله حسان">
+                </div>
+                <div class="personal-info">
+                    <h1>نبيل عبدالله علي حسان</h1>
+                    <div class="title">محترف في التسويق والمبيعات والمحاسبة</div>
+                    <div class="contact-info">
+                        <div class="contact-item">📍 جازان - أحد المسارحة</div>
+                        <div class="contact-item">📞 0530122669</div>
+                        <div class="contact-item">🎂 1990/06/30</div>
+                        <div class="contact-item">💍 متزوج</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <div class="content">
+            <!-- الهدف الوظيفي -->
+            <div class="section">
+                <h3 class="section-title">الهدف الوظيفي</h3>
+                <div class="experience-item">
+                    <p class="item-description">
+                        أسعى للاستقرار الوظيفي في منشأة تمكنني من تطوير ذاتي وكسب المهارات والخبرات المناسبة 
+                        التي تؤهلني لتطوير أدائي الوظيفي والإسهام الفعال في تحقيق أهداف المنشاة.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- الخبرات العملية -->
+            <div class="section">
+                <h3 class="section-title">الخبرات العملية</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h4>التسويق والمبيعات</h4>
+                        <p>خبرة في مجال التسويق وإدارة المبيعات مع القدرة على تحقيق الأهداف المرجوة</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>أعمال المحاسبة</h4>
+                        <p>معرفة عملية في مجال المحاسبة والمبادئ المالية الأساسية مع الاهتمام بالدقة</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>سائق خاص</h4>
+                        <p>رخصة قيادة سارية ومهارة عالية في القيادة مع الالتزام بأنظمة السلامة</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- المهارات الأساسية -->
+            <div class="section">
+                <h3 class="section-title">المهارات الأساسية</h3>
+                <div class="tags">
+                    <div class="tag marketing">التسويق والمبيعات</div>
+                    <div class="tag accounting">المحاسبة</div>
+                    <div class="tag driver">القيادة</div>
+                    <div class="tag">خدمة العملاء</div>
+                </div>
+            </div>
+            
+            <!-- المميزات الشخصية -->
+            <div class="section">
+                <h3 class="section-title">المميزات الشخصية</h3>
+                <div class="experience-item">
+                    <div class="compact-list">
+                        • إنجاز الأعمال بسرعة مع الحفاظ على الجودة<br>
+                        • القدرة على القيام بكافة الأعمال الموكلة<br>
+                        • إجادة الاتصال والتعامل مع الآخرين<br>
+                        • الالتزام بدوام العمل وتعليمات المدراء<br>
+                        • القدرة على العمل تحت الضغوط
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الشريط الجانبي للمعلومات الإضافية -->
+        <div class="sidebar">
+            <div class="section">
+                <h3 class="section-title">المؤهلات العلمية</h3>
+                <div class="skill-item">
+                    <h4>الثانوية العامة</h4>
+                    <p>المؤهل العلمي الأساسي مع مهارات عملية في التسويق</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">المهارات الشخصية</h3>
+                <div class="tags">
+                    <div class="tag">إنجاز المهام بسرعة</div>
+                    <div class="tag">الحفاظ على الجودة</div>
+                    <div class="tag">التواصل الفعال</div>
+                    <div class="tag">العمل تحت الضغط</div>
+                    <div class="tag">الالتزام بالعمل</div>
+                    <div class="tag">العمل الجماعي</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">التخصصات</h3>
+                <div class="tags">
+                    <div class="tag driver">سائق خاص</div>
+                    <div class="tag marketing">التسويق</div>
+                    <div class="tag accounting">المحاسبة</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // تأثيرات بسيطة للعناصر
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.skill-item, .experience-item');
+            
+            items.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(10px)';
+                item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

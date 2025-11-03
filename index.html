@@ -205,10 +205,6 @@
             line-height: 1.6;
             color: #7f8c8d;
         }
-        
-        .compact-list li {
-            margin-bottom: 5px;
-        }
 
         /* إخفاء شريط التمرير مع الحفاظ على functionality */
         .sidebar::-webkit-scrollbar,
@@ -280,27 +276,16 @@
                 <div class="skills-grid">
                     <div class="skill-item">
                         <h4>التسويق والمبيعات</h4>
-                        <p>خبرة في مجال التسويق وإدارة المبيعات مع القدرة على تحقيق الأهداف المرجوة</p>
+                        <p>خبرة في إستراتيجيات التسويق وإدارة المبيعات وتحقيق الأهداف</p>
                     </div>
                     <div class="skill-item">
                         <h4>أعمال المحاسبة</h4>
-                        <p>معرفة عملية في مجال المحاسبة والمبادئ المالية الأساسية مع الاهتمام بالدقة</p>
+                        <p>معرفة في المبادئ المحاسبية والإجراءات المالية</p>
                     </div>
                     <div class="skill-item">
-                        <h4>سائق خاص</h4>
-                        <p>رخصة قيادة سارية ومهارة عالية في القيادة مع الالتزام بأنظمة السلامة</p>
+                        <h4>القيادة المحترفة</h4>
+                        <p>سائق خاص مع رخصة قيادة سارية والالتزام بأنظمة السلامة</p>
                     </div>
-                </div>
-            </div>
-            
-            <!-- المهارات الأساسية -->
-            <div class="section">
-                <h3 class="section-title">المهارات الأساسية</h3>
-                <div class="tags">
-                    <div class="tag marketing">التسويق والمبيعات</div>
-                    <div class="tag accounting">المحاسبة</div>
-                    <div class="tag driver">القيادة</div>
-                    <div class="tag">خدمة العملاء</div>
                 </div>
             </div>
             
@@ -309,44 +294,47 @@
                 <h3 class="section-title">المميزات الشخصية</h3>
                 <div class="experience-item">
                     <div class="compact-list">
-                        • إنجاز الأعمال بسرعة مع الحفاظ على الجودة<br>
-                        • القدرة على القيام بكافة الأعمال الموكلة<br>
-                        • إجادة الاتصال والتعامل مع الآخرين<br>
-                        • الالتزام بدوام العمل وتعليمات المدراء<br>
-                        • القدرة على العمل تحت الضغوط
+                        • إنجاز المهام في أسرع وقت مع الحفاظ على الجودة<br>
+                        • المرونة في أداء múltiples المهام<br>
+                        • التواصل الفعال مع الآخرين<br>
+                        • الالتزام بمواعيد العمل والتعليمات<br>
+                        • الحفاظ على الهدوء تحت الضغط
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- الشريط الجانبي للمعلومات الإضافية -->
+        <!-- الشريط الجانبي -->
         <div class="sidebar">
             <div class="section">
                 <h3 class="section-title">المؤهلات العلمية</h3>
-                <div class="skill-item">
-                    <h4>الثانوية العامة</h4>
-                    <p>المؤهل العلمي الأساسي مع مهارات عملية في التسويق</p>
+                <div class="education-item">
+                    <h4 class="item-title">الثانوية العامة</h4>
+                    <p class="item-description">الشهادة الثانوية مع مهارات عملية في التسويق</p>
                 </div>
             </div>
             
             <div class="section">
-                <h3 class="section-title">المهارات الشخصية</h3>
+                <h3 class="section-title">المهارات الأساسية</h3>
                 <div class="tags">
-                    <div class="tag">إنجاز المهام بسرعة</div>
-                    <div class="tag">الحفاظ على الجودة</div>
-                    <div class="tag">التواصل الفعال</div>
-                    <div class="tag">العمل تحت الضغط</div>
-                    <div class="tag">الالتزام بالعمل</div>
-                    <div class="tag">العمل الجماعي</div>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h3 class="section-title">التخصصات</h3>
-                <div class="tags">
-                    <div class="tag driver">سائق خاص</div>
-                    <div class="tag marketing">التسويق</div>
+                    <div class="tag marketing">التسويق والمبيعات</div>
                     <div class="tag accounting">المحاسبة</div>
+                    <div class="tag driver">القيادة المحترفة</div>
+                    <div class="tag">إدارة الوقت</div>
+                    <div class="tag">خدمة العملاء</div>
+                    <div class="tag">التواصل الفعال</div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3 class="section-title">الصفات المميزة</h3>
+                <div class="tags">
+                    <div class="tag">الموثوقية</div>
+                    <div class="tag">الدقة</div>
+                    <div class="tag">المرونة</div>
+                    <div class="tag">الالتزام</div>
+                    <div class="tag">العمل الجماعي</div>
+                    <div class="tag">تحمل المسؤولية</div>
                 </div>
             </div>
         </div>
@@ -355,7 +343,7 @@
     <script>
         // تأثيرات بسيطة للعناصر
         document.addEventListener('DOMContentLoaded', function() {
-            const items = document.querySelectorAll('.skill-item, .experience-item');
+            const items = document.querySelectorAll('.skill-item, .experience-item, .education-item');
             
             items.forEach((item, index) => {
                 item.style.opacity = '0';
